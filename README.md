@@ -22,7 +22,7 @@ The production files are generated in `dist/`.
 
 ## Quote Form
 
-The quote form posts to FormSubmit at `catering@callefresca.com`.
+The quote form posts to FormSubmit at `callefrescakitchen@gmail.com`.
 
 The first time the form is submitted, FormSubmit may send a confirmation email to that inbox. Confirm it once so future requests are delivered.
 
@@ -56,4 +56,3 @@ Then in GitHub:
 1. Open the repository settings.
 2. Go to Pages.
 3. Set source to GitHub Actions if it is not already selected.
-
