@@ -383,6 +383,7 @@ function Eyebrow({ text, light = false }: { text: string; light?: boolean }) {
 // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 const QUOTE_EMAIL = "callefrescakitchen@gmail.com";
+const QUOTE_FORM_ACTION = `https://formsubmit.co/${QUOTE_EMAIL}`;
 const QUOTE_FORM_ENDPOINT = `https://formsubmit.co/ajax/${QUOTE_EMAIL}`;
 
 export default function App() {
@@ -841,7 +842,11 @@ export default function App() {
                 </p>
               </div>
             ) : (
-              <form onSubmit={handleFormSubmit} className="space-y-4" noValidate>
+              <form action={QUOTE_FORM_ACTION} method="POST" onSubmit={handleFormSubmit} className="space-y-4" noValidate>
+                <input type="hidden" name="_subject" value="New Calle Fresca catering quote request" />
+                <input type="hidden" name="_template" value="table" />
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="text" name="_honey" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label className={labelCls} htmlFor="name">Name *</label>
