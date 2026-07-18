@@ -383,6 +383,8 @@ function Eyebrow({ text, light = false }: { text: string; light?: boolean }) {
 // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 const QUOTE_EMAIL = "callefrescakitchen@gmail.com";
+const CONTACT_PHONE = "(925) 567-6712";
+const SERVICE_AREA = "San Francisco Bay Area";
 const QUOTE_FORM_ACTION = `https://formsubmit.co/${QUOTE_EMAIL}`;
 const QUOTE_FORM_ENDPOINT = `https://formsubmit.co/ajax/${QUOTE_EMAIL}`;
 
@@ -402,6 +404,16 @@ export default function App() {
   function setField(key: keyof typeof form) {
     return (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
       setForm(prev => ({ ...prev, [key]: e.target.value }));
+  }
+
+  function resetQuoteForm() {
+    setForm({
+      name: "", company: "", email: "", phone: "",
+      eventDate: "", deliveryTime: "", deliveryAddress: "",
+      guests: "", budget: "", mealType: "", dietary: "", notes: "",
+    });
+    setFormError("");
+    setFormSubmitted(false);
   }
 
   async function handleFormSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -840,6 +852,13 @@ export default function App() {
                 <p className="text-[#666] text-[15px] leading-relaxed">
                   Thank you. Your catering request has been received. Our team will contact you with the next steps.
                 </p>
+                <button
+                  type="button"
+                  onClick={resetQuoteForm}
+                  className="mt-6 inline-flex items-center justify-center bg-[#E4572E] hover:bg-[#c93e20] text-white font-bold px-6 py-3 rounded-full text-sm transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#183D2E]"
+                >
+                  Send Another Request
+                </button>
               </div>
             ) : (
               <form action={QUOTE_FORM_ACTION} method="POST" onSubmit={handleFormSubmit} className="space-y-4" noValidate>
@@ -1001,15 +1020,15 @@ export default function App() {
               <ul className="space-y-3.5">
                 <li className="flex items-start gap-3 text-white/60 text-sm">
                   <Mail className="w-4 h-4 mt-0.5 flex-shrink-0 text-[#F4B942]" aria-hidden="true" />
-                  <span>catering@callefresca.com</span>
+                  <span>{QUOTE_EMAIL}</span>
                 </li>
                 <li className="flex items-start gap-3 text-white/60 text-sm">
                   <Phone className="w-4 h-4 mt-0.5 flex-shrink-0 text-[#F4B942]" aria-hidden="true" />
-                  <span>Add phone number</span>
+                  <span>{CONTACT_PHONE}</span>
                 </li>
                 <li className="flex items-start gap-3 text-white/60 text-sm">
                   <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-[#F4B942]" aria-hidden="true" />
-                  <span>Add service area</span>
+                  <span>{SERVICE_AREA}</span>
                 </li>
               </ul>
             </div>
