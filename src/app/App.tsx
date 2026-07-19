@@ -18,6 +18,13 @@ import imgBlackBeansSide from "@/imports/black-beans-side.jpg";
 import imgBlackBeansTray from "@/imports/black-beans-tray.jpg";
 import imgBottledWater from "@/imports/bottled-water.jpg";
 import imgCannedSoda from "@/imports/canned-soda.jpg";
+import imgChipsAndSalsa from "@/imports/chips-and-salsa.png";
+import imgChipsAndGuacamole from "@/imports/chips-and-guacamole.png";
+import imgChipsAndQueso from "@/imports/chips-and-queso.png";
+import imgChurroBites from "@/imports/churro-bites.png";
+import imgChocolateBrownie from "@/imports/chocolate-brownie.png";
+import imgLemonade from "@/imports/lemonade.png";
+import imgIcedTea from "@/imports/iced-tea.png";
 // Batch 1 â€” bowls, spreads, catering
 import imgSpread from "@/imports/ChatGPT_Image_Jul_18__2026__01_09_17_PM__1_.png";
 import imgRiceBowls from "@/imports/ChatGPT_Image_Jul_18__2026__01_09_17_PM__2_.png";
@@ -293,6 +300,11 @@ const REAL_IMAGES: Record<string, string> = {
   "chicken-steak-combo-salad-bowl-full-meal-box.jpg": imgComboSalad,
   // Sides menu
   "black-beans-side.jpg":               imgBlackBeansSide,
+  "chips-and-salsa.jpg":                imgChipsAndSalsa,
+  "chips-and-guacamole.jpg":            imgChipsAndGuacamole,
+  "chips-and-queso.jpg":                imgChipsAndQueso,
+  "churro-bites.jpg":                   imgChurroBites,
+  "chocolate-brownie.jpg":              imgChocolateBrownie,
   // Catering add-on trays
   "chips-salsa-tray.jpg":              imgChipsSalsaTray,
   "chips-guac-tray.jpg":               imgChipsGuacTray,
@@ -304,6 +316,8 @@ const REAL_IMAGES: Record<string, string> = {
   // Drinks
   "bottled-water.jpg":                 imgBottledWater,
   "mexican-soda.jpg":                  imgCannedSoda,
+  "lemonade.jpg":                      imgLemonade,
+  "iced-tea.jpg":                      imgIcedTea,
   "beverage-pack.jpg":                 imgBeveragePack,
 };
 
